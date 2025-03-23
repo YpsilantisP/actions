@@ -20,7 +20,6 @@ def dynamodb_client():
     )
 
 
-@pytest.fixture(scope="module")
 def test_connection(dynamodb_client):
     assert dynamodb_client is not None
 
@@ -56,13 +55,12 @@ def test_connection(dynamodb_client):
 #     dynamodb_client.delete_table(TableName=table_name)
 #     waiter = dynamodb_client.get_waiter("table_not_exists")
 #     waiter.wait(TableName=table_name)
-
-
+#
+#
 # def test_put_and_get_item(dynamodb_client, test_table):
 #     """Simple test: write an item and read it back."""
 #     table_name = test_table
 #
-#     # Put an item
 #     dynamodb_client.put_item(
 #         TableName=table_name,
 #         Item={
@@ -71,7 +69,6 @@ def test_connection(dynamodb_client):
 #         }
 #     )
 #
-#     # Retrieve it
 #     response = dynamodb_client.get_item(
 #         TableName=table_name,
 #         Key={"PK": {"S": "test-pk"}}
