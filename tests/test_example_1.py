@@ -3,13 +3,11 @@
 import unittest
 
 
-
 class TestExample(unittest.TestCase):
-
-    def test_always_passes(self):
+    def test(self):
         self.assertEqual(1, 1)
 
-    def test_another_always_passes(self):
+    def test_1(self):
         self.assertTrue(2 == 2)
 
 
