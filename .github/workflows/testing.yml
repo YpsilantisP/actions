@@ -6,6 +6,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    services:
+      dynamodb:
+        image: amazon/dynamodb-local
+        ports:
+          - 8000:8000
+
     steps:
       - name: Get Code
         uses: actions/checkout@v4
@@ -18,4 +25,6 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: Run tests
+        env:
+          DYNAMODB_ENDPOINT: http://localhost:8000
         run: poetry run pytest
