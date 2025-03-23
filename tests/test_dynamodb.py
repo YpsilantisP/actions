@@ -7,6 +7,7 @@ from botocore.exceptions import ClientError
 
 DYNAMODB_ENDPOINT = os.environ.get("DYNAMODB_ENDPOINT", "http://localhost:8000")
 
+
 @pytest.fixture(scope="module")
 def dynamodb_client():
     """Return a low-level DynamoDB client configured for the local endpoint."""

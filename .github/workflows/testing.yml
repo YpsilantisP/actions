@@ -27,4 +27,4 @@ jobs:
       - name: Run tests
         env:
           DYNAMODB_ENDPOINT: http://localhost:8000
-        run: poetry run pytest
+        run: poetry run pytest --verbose
